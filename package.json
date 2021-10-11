@@ -6,10 +6,12 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "d": "^1.0.1",
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.3.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -33,5 +35,24 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "description": "This is for my portfolio website. I am using react for this website",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sakkhor909/portfolio.git"
+  },
+  "keywords": [
+    "Portfolio",
+    "Minhajur",
+    "Rahman"
+  ],
+  "author": "Minhajur Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sakkhor909/portfolio/issues"
+  },
+  "homepage": "https://sakkhor909.github.io/portfolio"
 }
