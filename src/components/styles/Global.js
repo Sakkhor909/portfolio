@@ -14,6 +14,11 @@ const GlobalStyles = createGlobalStyle`
 
 
 
+body {
+  font-family: 'VT323', monospace;
+  text-transform: uppercase;
+  font-size: 4vmin;
+}
 
 `;
 

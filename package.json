@@ -2,6 +2,23 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "description": "This is for my portfolio website. I am using react for this website",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sakkhor909/portfolio.git"
+  },
+  "keywords": [
+    "Portfolio",
+    "Minhajur",
+    "Rahman"
+  ],
+  "author": "Minhajur Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sakkhor909/portfolio/issues"
+  },
+  "homepage": "https://sakkhor909.github.io/portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -37,22 +54,5 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
-  },
-  "description": "This is for my portfolio website. I am using react for this website",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sakkhor909/portfolio.git"
-  },
-  "keywords": [
-    "Portfolio",
-    "Minhajur",
-    "Rahman"
-  ],
-  "author": "Minhajur Rahman",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Sakkhor909/portfolio/issues"
-  },
-  "homepage": "https://sakkhor909.github.io/portfolio"
+  }
 }

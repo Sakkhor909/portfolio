@@ -1,9 +1,10 @@
 import React from 'react';
 import { MyImageCSS } from './styles/Styled';
+import Image from '../assets/images/MyImage.jpg';
 
 function MyImage() {
     return (
-        <MyImageCSS src="./assets/images/MyImage.jpg" alt="My Image" />
+        <MyImageCSS src={Image} alt="My Image" />
     )
 }
 
