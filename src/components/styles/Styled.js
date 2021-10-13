@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Body = styled.body`
+export const Body = styled.div`
   width: 100%;
   height: 100vh;
   background-color: ${({ theme }) => theme.color.BodyColor};
@@ -28,28 +28,7 @@ export const MyImageCSS = styled.img`
   border-radius: 50px;
 `;
 
-export const Monitor = styled.div`
-  width: 70%;
-  margin: 0% 10%;
-  background: #000000;
-  box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media only screen and (max-width: 750px) {
-    width: 100%;
-    min-height: 25vh;
-    margin-top: -20%;
-  }
-`;
 
-export const MonitorMassage = styled.h1`
-  color: #35b833;
-  font-size: 4vmin;
-  font-weight: normal;
-  user-select: none;
-`;
 
 export const Keyboard = styled.div`
   width: 100%;
@@ -59,12 +38,12 @@ export const Keyboard = styled.div`
   justify-content: space-evenly;
   align-items: center;
   background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-    inset 0px 0px 5px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 6px 9px 0px 2px rgb(0 0 0 / 25%);
   border-radius: 10px;
   padding: 1rem;
   @media only screen and (max-width: 750px) {
     height: 30vh;
+    justify-content: space-between;
   }
 `;
 
