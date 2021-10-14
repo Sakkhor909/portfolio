@@ -3,13 +3,15 @@ import { StyledMonitor, MonitorMassage } from "./Monitor.styled";
 import Typewriter from "typewriter-effect";
 
 function Monitor({ Massage }) {
-
   return (
     <StyledMonitor>
       <MonitorMassage>
-        &gt; <Typewriter onInit={(typewriter) => {
-            typewriter.typeString(Massage).start()
-        }} />
+        &gt; <Typewriter 
+          options={{
+            strings: Massage,
+            autoStart: true
+          }}
+       />
       </MonitorMassage>
     </StyledMonitor>
   );
