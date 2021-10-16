@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import GlobalStyles from "./styles/Global";
-import { Body, Container, Row, Keyboard } from "./styles/Styled";
+import { Body, Container, Keyboard } from "./styles/Styled";
 import Monitor from "./Monitor/Monitor";
-import MyImage from "./MyImage";
 import Button from "./Button";
 import Input from "./Input";
 
@@ -71,14 +70,11 @@ function App() {
       <GlobalStyles />
       <Body>
         <Container>
-          <Row>
-            <MyImage />
             <Monitor
               Massage={MonitorData.massage}
               speed={MonitorData.speed}
               Display={MonitorData.display}
             />
-          </Row>
           <Keyboard button={MonitorData.clicked}>
             {MonitorData.clicked ? (
               <>

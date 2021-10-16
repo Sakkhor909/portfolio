@@ -12,21 +12,9 @@ export const Container = styled.div`
   height: 100%;
 `;
 
-export const Row = styled.div`
-  display: flex;
-  height: 50%;
-  @media only screen and (max-width: 750px) {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20%;
-  }
-`;
 
-export const MyImageCSS = styled.img`
-  width: 22%;
-  min-width: 200px;
-  border-radius: 50px;
-`;
+
+
 
 export const Keyboard = styled.div`
   width: 100%;

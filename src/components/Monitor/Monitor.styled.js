@@ -2,17 +2,18 @@ import styled from "styled-components";
 
 export const StyledMonitor = styled.div`
   width: 70%;
-  margin: 0% 10%;
+  height: 50%;
+  margin: 0 auto;
   background: #000000;
   box-shadow: 7px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   @media only screen and (max-width: 750px) {
     width: 100%;
     min-height: 25vh;
-    margin-top: -20%;
   }
 `;
 
@@ -22,12 +23,15 @@ export const MonitorMassage = styled.h1`
   font-weight: normal;
   user-select: none;
   padding: 5%;
+  margin-right: 10%;
   line-height: 1.5rem;
+  @media (orientation: portrait) {
+    margin-right: 0%;
+  }
   .Typewriter {
     display: inline;
     .Typewriter__wrapper {
-      margin-left: 10px;
-      display: ${Props => Props.Display};
+      display: ${(Props) => Props.Display};
       ul {
         li {
           margin-bottom: 10px;
