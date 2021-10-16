@@ -28,22 +28,26 @@ export const MyImageCSS = styled.img`
   border-radius: 50px;
 `;
 
-
-
 export const Keyboard = styled.div`
   width: 100%;
   height: 50%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: ${({ button }) =>
+    button == "contact" ? "center" : "space-evenly"};
   align-items: center;
   background: rgba(255, 255, 255, 0.6);
   box-shadow: 6px 9px 0px 2px rgb(0 0 0 / 25%);
   border-radius: 10px;
   padding: 1rem;
+  & .inputBtn {
+    height: 20%;
+    border-radius: 0px 10px 10px 0px;
+  }
   @media only screen and (max-width: 750px) {
-    height: 30vh;
-    justify-content: space-between;
+    height: 40vh;
+    justify-content: ${({ button }) =>
+    button == "contact" ? "center" : "space-around"};
   }
 `;
 
@@ -53,7 +57,6 @@ export const KeyButton = styled.button`
   text-align: center;
   padding: 1rem;
   border-radius: 10px;
-  margin-left: 2%;
   cursor: pointer;
   font-size: 1.5rem;
   transition: 0.3s;
@@ -72,6 +75,6 @@ export const KeyButton = styled.button`
   }
   @media only screen and (max-width: 750px) {
     font-size: 1rem;
-    margin-left: 4%;
+    margin-left: 0%;
   }
 `;

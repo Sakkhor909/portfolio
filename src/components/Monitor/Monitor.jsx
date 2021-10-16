@@ -2,14 +2,15 @@ import React from "react";
 import { StyledMonitor, MonitorMassage } from "./Monitor.styled";
 import Typewriter from "typewriter-effect";
 
-function Monitor({ Massage }) {
+function Monitor({ Massage, speed, Display }) {
   return (
     <StyledMonitor>
-      <MonitorMassage>
+      <MonitorMassage Display={Display}>
         &gt; <Typewriter 
           options={{
             strings: Massage,
-            autoStart: true
+            autoStart: true,
+            delay: speed
           }}
        />
       </MonitorMassage>
@@ -18,3 +19,4 @@ function Monitor({ Massage }) {
 }
 
 export default Monitor;
+

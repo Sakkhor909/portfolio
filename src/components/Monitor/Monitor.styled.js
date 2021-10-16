@@ -21,7 +21,18 @@ export const MonitorMassage = styled.h1`
   font-size: 4vmin;
   font-weight: normal;
   user-select: none;
+  padding: 5%;
+  line-height: 1.5rem;
   .Typewriter {
     display: inline;
+    .Typewriter__wrapper {
+      margin-left: 10px;
+      display: ${Props => Props.Display};
+      ul {
+        li {
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 `;
