@@ -3,7 +3,7 @@ import GlobalStyles from "./styles/Global";
 import { Body, Container, Keyboard } from "./styles/Styled";
 import Monitor from "./Monitor/Monitor";
 import Button from "./Button";
-import Input from "./Input";
+import ContactForm from "./ContactForm/ContactForm";
 
 function App() {
   const [MonitorData, setMonitorData] = useState({
@@ -61,18 +61,10 @@ function App() {
                Your Name :
                `,
       speed: 70,
-      cursor: "",
       clicked: "contact",
     });
   };
 
-  const showContactData = (event) => {
-    console.log(event.target.value);
-    setMonitorData({
-      ...MonitorData,
-      contactName: event.target.value,
-    });
-  };
 
   return (
     <>
@@ -88,9 +80,12 @@ function App() {
           <Keyboard button={MonitorData.clicked}>
             {MonitorData.clicked ? (
               <>
-                <Button Text="Back" Icon="fa-arrow-alt-circle-left" className="backBtn" />
-                <Input handelChange={showContactData} />
-                <Button Icon="fa-greater-than" button={MonitorData.clicked} />
+                <Button
+                  Text="Back"
+                  Icon="fa-arrow-alt-circle-left"
+                  className="backBtn"
+                />
+               <ContactForm State={MonitorData} setState={setMonitorData} />
               </>
             ) : (
               <>

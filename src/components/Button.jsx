@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-function Buttons({ Text, Icon, handelClicked, button, className }) {
-  if (button === "contact") {
-    className = "inputBtn"
+function Buttons({ Text, Icon, handelClicked, buttonName, className, Type }) {
+  if (buttonName === "contact") {
+    className = "inputBtn";
   } else {
-    null
+    null;
   }
   return (
-    <KeyButton onClick={handelClicked} className={className}>
+    <KeyButton onClick={handelClicked} className={className} type={Type}>
       <i className={`fa-solid ${Icon}`}></i> {Text}
     </KeyButton>
   );
