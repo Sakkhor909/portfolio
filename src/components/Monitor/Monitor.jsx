@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import { StyledMonitor, MonitorMassage } from "./Monitor.styled";
 import MyImage from "../MyImage";

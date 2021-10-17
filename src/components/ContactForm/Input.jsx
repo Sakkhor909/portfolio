@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-function Input({ handelChange, Value }) {
+function Input({ handelChange, Value, placeholder, type }) {
   return (
     <StyledInput
-      type="text"
-      placeholder="Type your name here"
+      type={type}
+      placeholder={placeholder}
       value={Value}
       onChange={handelChange}
+      autoComplete="off"
+      required
     />
   );
 }
@@ -22,5 +24,8 @@ const StyledInput = styled.input`
   width: 40vw;
   @media only screen and (max-width: 750px) {
     width: initial;
+  }
+  &:focus {
+    border: 1px solid #35b833;
   }
 `;

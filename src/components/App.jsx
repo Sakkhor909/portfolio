@@ -10,8 +10,8 @@ function App() {
     massage: "Welcome to my website",
     speed: 100,
     display: null,
-    clicked: null,
-    contactName: null,
+    clicked: "home",
+    contactName: "",
   });
 
   const showName = () => {
@@ -57,14 +57,21 @@ function App() {
   const showContactForm = () => {
     setMonitorData({
       ...MonitorData,
-      massage: `
-               Your Name :
-               `,
+      massage: `Your Name : `,
       speed: 70,
       clicked: "contact",
     });
   };
 
+  const backto = (event) => {
+    setMonitorData({
+      ...MonitorData,
+      massage: "Welcome to my website",
+      clicked: "home",
+      contactName: "",
+    });
+   event.target.blur();
+  };
 
   return (
     <>
@@ -78,14 +85,15 @@ function App() {
             name={MonitorData.contactName}
           />
           <Keyboard button={MonitorData.clicked}>
-            {MonitorData.clicked ? (
+            {MonitorData.clicked === "contact" ? (
               <>
                 <Button
                   Text="Back"
                   Icon="fa-arrow-alt-circle-left"
                   className="backBtn"
+                  handelClicked={backto}
                 />
-               <ContactForm State={MonitorData} setState={setMonitorData} />
+                <ContactForm State={MonitorData} setState={setMonitorData} />
               </>
             ) : (
               <>
