@@ -33,8 +33,9 @@ export const MonitorMassage = styled.h1`
     .Typewriter__wrapper {
       display: ${(Props) => Props.Display};
       ul {
+        list-style-position: inside;
         li {
-          margin-bottom: 10px;
+          padding: 10px;
         }
       }
     }

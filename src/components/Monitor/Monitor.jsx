@@ -1,20 +1,25 @@
 import React from "react";
+import styled from "styled-components";
 import { StyledMonitor, MonitorMassage } from "./Monitor.styled";
 import MyImage from "../MyImage";
 import Typewriter from "typewriter-effect";
 
-function Monitor({ Massage, speed, Display }) {
+function Monitor({ Massage, speed, Display, name }) {
   return (
     <StyledMonitor>
       <MyImage />
       <MonitorMassage Display={Display}>
-        &gt; <Typewriter 
+        &gt;{" "}
+        <Typewriter
           options={{
             strings: Massage,
             autoStart: true,
-            delay: speed
+            delay: speed,
+            cursor: null,
           }}
-       />
+        />
+        <span>{name}</span>
+        <Blinker>|</Blinker>
       </MonitorMassage>
     </StyledMonitor>
   );
@@ -22,3 +27,12 @@ function Monitor({ Massage, speed, Display }) {
 
 export default Monitor;
 
+const Blinker = styled.span`
+  animation: blinker 1s infinite;
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+`;

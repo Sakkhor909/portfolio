@@ -8,7 +8,7 @@ export default MyImage;
 
 const MyImageCSS = styled.img`
   width: 15%;
-  height: 35%;
+  height: 40%;
   position: absolute;
   top: 0;
   right: 0;

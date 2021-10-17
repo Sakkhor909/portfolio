@@ -11,6 +11,7 @@ function App() {
     speed: 100,
     display: null,
     clicked: null,
+    contactName: null,
   });
 
   const showName = () => {
@@ -32,8 +33,7 @@ function App() {
   const showEducation = () => {
     setMonitorData({
       ...MonitorData,
-      massage:
-        "I have studied Bachelor of Business Administration (BBA) with a major in Management Information system (MIS) graduated from Daffodil Internation University",
+      massage: `I have studied Bachelor of Business Administration (BBA) with a major in Management Information system (MIS) graduated from <a href="https://daffodilvarsity.edu.bd/" target="_blank"> Daffodil Internation University  </a> `,
       speed: 40,
       display: null,
     });
@@ -61,7 +61,16 @@ function App() {
                Your Name :
                `,
       speed: 70,
+      cursor: "",
       clicked: "contact",
+    });
+  };
+
+  const showContactData = (event) => {
+    console.log(event.target.value);
+    setMonitorData({
+      ...MonitorData,
+      contactName: event.target.value,
     });
   };
 
@@ -70,15 +79,17 @@ function App() {
       <GlobalStyles />
       <Body>
         <Container>
-            <Monitor
-              Massage={MonitorData.massage}
-              speed={MonitorData.speed}
-              Display={MonitorData.display}
-            />
+          <Monitor
+            Massage={MonitorData.massage}
+            speed={MonitorData.speed}
+            Display={MonitorData.display}
+            name={MonitorData.contactName}
+          />
           <Keyboard button={MonitorData.clicked}>
             {MonitorData.clicked ? (
               <>
-                <Input />
+                <Button Text="Back" Icon="fa-arrow-alt-circle-left" className="backBtn" />
+                <Input handelChange={showContactData} />
                 <Button Icon="fa-greater-than" button={MonitorData.clicked} />
               </>
             ) : (

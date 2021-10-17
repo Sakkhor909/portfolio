@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-function Input() {
-  return <StyledInput type="text" placeholder="Type your name here" />;
+function Input({handelChange}) {
+  return <StyledInput type="text" placeholder="Type your name here" onChange={handelChange} />;
 }
 
 export default Input;
