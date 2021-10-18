@@ -4,7 +4,7 @@ import { StyledMonitor, MonitorMassage } from "./Monitor.styled";
 import MyImage from "../MyImage";
 import Typewriter from "typewriter-effect";
 
-function Monitor({ Massage, speed, Display, name }) {
+function Monitor({ Massage, speed, Display, inputData }) {
   return (
     <StyledMonitor>
       <MyImage />
@@ -18,7 +18,7 @@ function Monitor({ Massage, speed, Display, name }) {
             cursor: null,
           }}
         />
-        <span>{name}</span>
+        <span>{inputData}</span>
         <Blinker>|</Blinker>
       </MonitorMassage>
     </StyledMonitor>

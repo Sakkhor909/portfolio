@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 function Input({ handelChange, Value, placeholder, type }) {
+  const inputRef = useRef();
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
     <StyledInput
+      ref={inputRef}
       type={type}
       placeholder={placeholder}
       value={Value}

@@ -11,7 +11,7 @@ function App() {
     speed: 100,
     display: null,
     clicked: "home",
-    contactName: "",
+    inputData: "",
   });
 
   const showName = () => {
@@ -64,11 +64,14 @@ function App() {
   };
 
   const backto = (event) => {
+    if (MonitorData.inputData !== "") {
+      alert("All data you input will be lost, are you sure ?")
+    }
     setMonitorData({
       ...MonitorData,
       massage: "Welcome to my website",
       clicked: "home",
-      contactName: "",
+      inputData: "",
     });
    event.target.blur();
   };
@@ -82,7 +85,7 @@ function App() {
             Massage={MonitorData.massage}
             speed={MonitorData.speed}
             Display={MonitorData.display}
-            name={MonitorData.contactName}
+            inputData={MonitorData.inputData}
           />
           <Keyboard button={MonitorData.clicked}>
             {MonitorData.clicked === "contact" ? (

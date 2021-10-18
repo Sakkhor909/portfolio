@@ -7,8 +7,8 @@ const MyImage = () => <MyImageCSS src={Image} alt="My Image" />;
 export default MyImage;
 
 const MyImageCSS = styled.img`
-  width: 15%;
-  height: 40%;
+  width: 20%;
+  height: 45%;
   position: absolute;
   top: 0;
   right: 0;
