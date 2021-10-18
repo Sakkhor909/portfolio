@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Input from "./Input";
 import Button from "../Button";
-import Textarea from "./Textarea";
+
 
 function ContactForm({ State, setState }) {
   const [ContcatData, setContcatData] = useState({
@@ -12,7 +12,7 @@ function ContactForm({ State, setState }) {
   });
   const [Step, setStep] = useState(1);
   const [InputState, setInputState] = useState({
-    Type: "text",
+    inputtype: "text",
     Placeholder: "Type your name here",
   });
 
@@ -24,11 +24,12 @@ function ContactForm({ State, setState }) {
   };
 
   const handelSubmit = (event, Step) => {
+    event.preventDefault();
     setStep((prevValue) => {
       if (prevValue === 1) {
         setInputState({
           ...InputState,
-          Type: "email",
+          inputtype: "email",
           Placeholder: "Type Your Email Here...",
         });
         setContcatData({
@@ -49,7 +50,7 @@ function ContactForm({ State, setState }) {
         });
         setInputState({
           ...InputState,
-          Type: "textarea",
+          inputtype: "textarea",
         });
         setContcatData({
           ...ContcatData,
@@ -64,7 +65,7 @@ function ContactForm({ State, setState }) {
         });
         setInputState({
           ...InputState,
-          Type: "",
+          inputtype: "",
           Placeholder: "",
         });
         setContcatData({
@@ -74,33 +75,19 @@ function ContactForm({ State, setState }) {
       }
       return (Step = prevValue + 1);
     });
-
-    event.preventDefault();
+    event.target[0].focus();
   };
 
+  let Form = null;
 
+  if (Step !== 4) {
+    Form = <StyledContactForm onSubmit={() => handelSubmit(event, Step)}>
+    <Input inputtype={InputState.inputtype} handelChange={showContactData} value={State.inputData} placeholder={InputState.Placeholder} />
+    <Button Type="submit" Icon="fa-greater-than" buttonName={State.clicked} />
+     </StyledContactForm>
+  }
 
-  return (
-    <StyledContactForm onSubmit={() => handelSubmit(event, Step)}>
-      {InputState.Type === "text" || InputState.Type === "email" ? (
-        <>
-        <Input
-          handelChange={showContactData}
-          Value={State.inputData}
-          placeholder={InputState.Placeholder}
-          type={InputState.Type}
-        />
-        <Button Type="submit" Icon="fa-greater-than" buttonName={State.clicked} />
-        </>
-      ) : InputState.Type === "textarea" ? (
-        <>
-        <Textarea Value={State.inputData} handelChange={showContactData} />
-        <Button Type="submit" Icon="fa-greater-than" buttonName={State.clicked} />
-        </>
-      ) : null}
-
-    </StyledContactForm>
-  );
+  return Form;
 }
 
 export default ContactForm;
@@ -108,3 +95,4 @@ export default ContactForm;
 export const StyledContactForm = styled.form`
   display: flex;
 `;
+
