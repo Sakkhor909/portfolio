@@ -3,8 +3,7 @@ import styled from "styled-components";
 import Input from "./Input";
 import Button from "../Button";
 
-
-function ContactForm({ State, setState }) {
+function ContactForm({ monitorState, setMonitorState }) {
   const [ContcatData, setContcatData] = useState({
     name: null,
     email: null,
@@ -17,14 +16,15 @@ function ContactForm({ State, setState }) {
   });
 
   const showContactData = (event) => {
-    setState({
-      ...State,
+    setMonitorState({
+      ...monitorState,
       inputData: event.target.value,
     });
   };
 
   const handelSubmit = (event, Step) => {
     event.preventDefault();
+    let inputValue = event.target[0].defaultValue.trim();
     setStep((prevValue) => {
       if (prevValue === 1) {
         setInputState({
@@ -34,33 +34,35 @@ function ContactForm({ State, setState }) {
         });
         setContcatData({
           ...ContcatData,
-          name: event.target[0].defaultValue,
+          name: inputValue,
         });
-        setState({
-          ...State,
+        setMonitorState({
+          ...monitorState,
           inputData: "",
-          massage: `Your Email : `,
+          command: `Your Email`,
         });
       }
       if (prevValue === 2) {
-        setState({
-          ...State,
+        setMonitorState({
+          ...monitorState,
           inputData: "",
-          massage: `Your Massage : `,
+          command: `Your Massage`,
         });
         setInputState({
           ...InputState,
           inputtype: "textarea",
+          Placeholder: "Type Your Massage Here...",
         });
         setContcatData({
           ...ContcatData,
-          email: event.target[0].defaultValue,
+          email: inputValue,
         });
       }
       if (prevValue === 3) {
-        setState({
-          ...State,
+        setMonitorState({
+          ...monitorState,
           inputData: "",
+          command: null,
           massage: `I will be text you soon, Thank you`,
         });
         setInputState({
@@ -70,7 +72,7 @@ function ContactForm({ State, setState }) {
         });
         setContcatData({
           ...ContcatData,
-          massage: event.target[0].defaultValue,
+          massage: inputValue,
         });
       }
       return (Step = prevValue + 1);
@@ -81,10 +83,21 @@ function ContactForm({ State, setState }) {
   let Form = null;
 
   if (Step !== 4) {
-    Form = <StyledContactForm onSubmit={() => handelSubmit(event, Step)}>
-    <Input inputtype={InputState.inputtype} handelChange={showContactData} value={State.inputData} placeholder={InputState.Placeholder} />
-    <Button Type="submit" Icon="fa-greater-than" buttonName={State.clicked} />
-     </StyledContactForm>
+    Form = (
+      <StyledContactForm onSubmit={(event) => handelSubmit(event, Step)}>
+        <Input
+          inputtype={InputState.inputtype}
+          handelChange={showContactData}
+          value={monitorState.inputData}
+          placeholder={InputState.Placeholder}
+        />
+        <Button
+          Type="submit"
+          Icon="fa-greater-than"
+          buttonName={monitorState.clicked}
+        />
+      </StyledContactForm>
+    );
   }
 
   return Form;
@@ -95,4 +108,3 @@ export default ContactForm;
 export const StyledContactForm = styled.form`
   display: flex;
 `;
-

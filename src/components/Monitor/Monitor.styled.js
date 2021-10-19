@@ -41,3 +41,21 @@ export const MonitorMassage = styled.h1`
     }
   }
 `;
+
+
+export const Blinker = styled.span`
+  animation: blinker 1s infinite;
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+`;
+
+export const ErroeData = styled.div`
+  color: red;
+  margin-top: 10px;
+  font-weight: lighter;
+  font-size: 1.2rem;
+`;

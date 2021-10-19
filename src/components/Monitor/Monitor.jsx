@@ -1,15 +1,19 @@
-import React, {useEffect} from "react";
-import styled from "styled-components";
-import { StyledMonitor, MonitorMassage } from "./Monitor.styled";
+import React from "react";
+import {
+  StyledMonitor,
+  MonitorMassage,
+  Blinker,
+  ErroeData,
+} from "./Monitor.styled";
 import MyImage from "../MyImage";
 import Typewriter from "typewriter-effect";
 
-function Monitor({ Massage, speed, Display, inputData }) {
+function Monitor({ command, Massage, speed, Display, inputData, errorData }) {
   return (
     <StyledMonitor>
       <MyImage />
       <MonitorMassage Display={Display}>
-        &gt;{" "}
+        {command && `>${command}: `}
         <Typewriter
           options={{
             strings: Massage,
@@ -20,19 +24,21 @@ function Monitor({ Massage, speed, Display, inputData }) {
         />
         <span>{inputData}</span>
         <Blinker>|</Blinker>
+        {errorData && (
+          <ErroeData>
+            {" "}
+            &gt;{" "}
+            <Typewriter
+              options={{
+                strings: errorData,
+                autoStart: true,
+              }}
+            />
+          </ErroeData>
+        )}
       </MonitorMassage>
     </StyledMonitor>
   );
 }
 
 export default Monitor;
-
-const Blinker = styled.span`
-  animation: blinker 1s infinite;
-
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
-`;

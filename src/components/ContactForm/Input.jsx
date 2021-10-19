@@ -13,6 +13,9 @@ function Input({ inputtype, value, handelChange, placeholder }) {
           autoComplete="off"
           required
           placeholder={placeholder}
+          autoFocus
+          minLength="3"
+          maxLength="25"
         />
       );
       break;
@@ -33,10 +36,9 @@ function Input({ inputtype, value, handelChange, placeholder }) {
         <StyledTextArea
           onChange={handelChange}
           value={value}
-          spellcheck="true"
-          maxLength="500"
           placeholder={placeholder}
           required
+          autoFocus
         />
       );
       break;

@@ -27,16 +27,30 @@ const KeyButton = styled.button`
   transition: 0.3s;
   outline: none;
   border: none;
-  &:hover,
-  :focus {
-    color: #35b833;
-    background: rgba(255, 255, 255, 0.6);
-    transform: translateY(-5px);
-    box-shadow: 4px 6px 0px 2px rgb(0 0 0 / 25%);
+  @media (hover: hover) {
+    &:hover,
+    :focus {
+      color: #35b833;
+      background: rgba(255, 255, 255, 0.6);
+      transform: translateY(-5px);
+      box-shadow: 4px 6px 0px 2px rgb(0 0 0 / 25%);
+    }
+    &:active {
+      transform: translateY(5px);
+      box-shadow: 1px 2px 0px 2px rgb(0 0 0 / 25%);
+    }
   }
-  &:active {
-    transform: translateY(5px);
-    box-shadow: 1px 2px 0px 2px rgb(0 0 0 / 25%);
+  @media (hover: none) {
+    &:focus {
+      color: #35b833;
+      background: rgba(255, 255, 255, 0.6);
+      transform: translateY(-5px);
+      box-shadow: 4px 6px 0px 2px rgb(0 0 0 / 25%);
+    }
+    &:active {
+      transform: translateY(5px);
+      box-shadow: 1px 2px 0px 2px rgb(0 0 0 / 25%);
+    }
   }
   @media only screen and (max-width: 750px) {
     font-size: 1rem;
