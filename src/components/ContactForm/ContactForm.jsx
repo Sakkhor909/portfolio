@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+require("dotenv").config();
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
+import emailjs from "emailjs-com";
 import Input from "./Input";
 import Button from "../Button";
 
 function ContactForm({ monitorState, setMonitorState }) {
+  const form = useRef();
   // Defining The contact data state
   const [ContcatData, setContcatData] = useState({
     name: null,
@@ -37,7 +40,7 @@ function ContactForm({ monitorState, setMonitorState }) {
     });
   };
   // Function for the submission of the contact data
-  const handelSubmit = (event, Step) => {
+  const handelSubmit = (event, Step, form) => {
     event.preventDefault();
     const inputValue = event.target[0].defaultValue.trim();
     const validate = Validation(monitorState, setMonitorState, inputValue);
@@ -50,7 +53,8 @@ function ContactForm({ monitorState, setMonitorState }) {
         ContcatData,
         setContcatData,
         monitorState,
-        setMonitorState
+        setMonitorState,
+        form
       );
     } else {
       return false;
@@ -58,11 +62,14 @@ function ContactForm({ monitorState, setMonitorState }) {
     event.target[0].focus();
   };
 
-  let Form = null;
+  let FormHTML = null;
 
   if (Step !== 4) {
-    Form = (
-      <StyledContactForm onSubmit={(event) => handelSubmit(event, Step)}>
+    FormHTML = (
+      <StyledContactForm
+        ref={form}
+        onSubmit={(event) => handelSubmit(event, Step, form)}
+      >
         <Input
           inputtype={InputState.inputtype}
           handelChange={handelChange}
@@ -70,6 +77,8 @@ function ContactForm({ monitorState, setMonitorState }) {
           placeholder={InputState.Placeholder}
           name={ContcatData.inputName}
         />
+        <Input inputtype="hidden" name="Hname" value={ContcatData.name} />
+        <Input inputtype="hidden" name="Hemail" value={ContcatData.email} />
         <Button
           Type="submit"
           Icon="fa-greater-than"
@@ -79,7 +88,7 @@ function ContactForm({ monitorState, setMonitorState }) {
     );
   }
 
-  return Form;
+  return FormHTML;
 }
 
 export default ContactForm;
@@ -114,7 +123,8 @@ function chnagingstep(
   ContcatData,
   setContcatData,
   monitorState,
-  setMonitorState
+  setMonitorState,
+  form
 ) {
   setStep((prevValue) => {
     if (prevValue === 1) {
@@ -146,16 +156,10 @@ function chnagingstep(
       });
       setContcatData({
         ...ContcatData,
-        inputName: "massage",
+        inputName: "message",
       });
     }
     if (prevValue === 3) {
-      setMonitorState({
-        ...monitorState,
-        inputData: "",
-        command: null,
-        massage: `I will be text you soon, Thank you`,
-      });
       setInputState({
         ...InputState,
         inputtype: "",
@@ -165,7 +169,40 @@ function chnagingstep(
         ...ContcatData,
         inputName: "",
       });
+      sendEmail(form, monitorState, setMonitorState);
     }
     return (Step = prevValue + 1);
   });
 }
+
+const sendEmail = (form, monitorState, setMonitorState) => {
+  emailjs
+    .sendForm(
+      process.env.SERVICE_KEY,
+      process.env.TEMPLATE_KEY,
+      form.current,
+      process.env.USER_KEY
+    )
+    .then(
+      (result) => {
+        if (result.text == "OK") {
+          setMonitorState({
+            ...monitorState,
+            inputData: "",
+            command: "",
+            massage: `Your email has been send. I will be reply you soon, Thank you`,
+          });
+        }
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+        setMonitorState({
+          ...monitorState,
+          inputData: "",
+          command: "",
+          massage: `Something went wrong, Retry or send me email at sakkhor909@gmail.com`,
+        });
+      }
+    );
+};

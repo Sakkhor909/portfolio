@@ -13,7 +13,7 @@ function Monitor({ command, Massage, speed, Display, inputData, errorData }) {
     <StyledMonitor>
       <MyImage />
       <MonitorMassage Display={Display}>
-        <span>&gt; {command && `${command}: `}</span>
+        <span className="command">&gt; {command && `${command}: `}</span>
         <Typewriter
           options={{
             strings: Massage,

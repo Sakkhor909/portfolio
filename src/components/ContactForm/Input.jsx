@@ -49,6 +49,9 @@ function Input({ name, inputtype, value, handelChange, placeholder }) {
         />
       );
       break;
+    case "hidden":
+      inputElement = <StyledInput name={name} type="hidden" value={value} />;
+      break;
     default:
       inputElement = null;
   }

@@ -23,11 +23,14 @@ export const MonitorMassage = styled.div`
   font-size: 4vmin;
   font-weight: normal;
   user-select: none;
-  padding: 5%;
+  padding: 4%;
   margin-right: 10%;
   line-height: 1.5rem;
   @media (orientation: portrait) {
     margin-right: 0%;
+  }
+  .command {
+    color: yellowgreen;
   }
   .Typewriter {
     display: inline;
