@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "../assets/images/MyImage.jpg";
 
-const MyImage = () => <MyImageCSS src={Image} alt="My Image" />;
+const MyImage = () => <MyImageCSS src={Image} alt="My Image" />
 
 export default MyImage;
 

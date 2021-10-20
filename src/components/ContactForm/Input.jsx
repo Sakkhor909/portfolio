@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-function Input({ inputtype, value, handelChange, placeholder }) {
+function Input({ name, inputtype, value, handelChange, placeholder }) {
   let inputElement = null;
   switch (inputtype) {
     case "text":
       inputElement = (
         <StyledInput
+          name={name}
           type="text"
           value={value}
           onChange={handelChange}
@@ -14,26 +15,32 @@ function Input({ inputtype, value, handelChange, placeholder }) {
           required
           placeholder={placeholder}
           autoFocus
-          minLength="3"
-          maxLength="25"
+          maxLength="30"
+          pattern="[a-zA-z ]+"
+          title="Letters only"
         />
       );
       break;
     case "email":
       inputElement = (
         <StyledInput
+          name={name}
           type="email"
           value={value}
           onChange={handelChange}
           autoComplete="off"
           required
           placeholder={placeholder}
+          maxLength="30"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+          title="Enter a valid email address"
         />
       );
       break;
     case "textarea":
       inputElement = (
         <StyledTextArea
+          name={name}
           onChange={handelChange}
           value={value}
           placeholder={placeholder}

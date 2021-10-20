@@ -17,7 +17,8 @@ export const StyledMonitor = styled.div`
   }
 `;
 
-export const MonitorMassage = styled.h1`
+export const MonitorMassage = styled.div`
+  width: 100%;
   color: #35b833;
   font-size: 4vmin;
   font-weight: normal;
@@ -41,7 +42,6 @@ export const MonitorMassage = styled.h1`
     }
   }
 `;
-
 
 export const Blinker = styled.span`
   animation: blinker 1s infinite;

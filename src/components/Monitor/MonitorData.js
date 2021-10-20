@@ -1,12 +1,3 @@
-
-
-export const ContactFormData = {
-  command1: "Your Name",
-  speed: 70,
-  display: "inline-block",
-  clicked: "contact",
-};
-
 export const ButtonsData = [
   {
     id : 1,

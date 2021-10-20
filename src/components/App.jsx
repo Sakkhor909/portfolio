@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import GlobalStyles from "./styles/Global";
 import { Body, Container, Keyboard } from "./styles/Styled";
 import Monitor from "./Monitor/Monitor";
-import { ButtonsData, ContactFormData } from "./Monitor/MonitorData";
+import { ButtonsData } from "./Monitor/MonitorData";
 import Button from "./Button";
 import ContactForm from "./ContactForm/ContactForm";
 
