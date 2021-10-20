@@ -4,18 +4,18 @@ import styled from "styled-components";
 import emailjs from "emailjs-com";
 import Input from "./Input";
 import Button from "../Button";
+import { init } from "emailjs-com";
+init(process.env.REACT_APP_USER_KEY);
 
 function ContactForm({ monitorState, setMonitorState }) {
   const form = useRef();
   // Defining The contact data state
   const [ContcatData, setContcatData] = useState({
-    name: null,
-    email: null,
-    massage: null,
+    name: "",
+    email: "",
+    massage: "",
     inputName: "name",
   });
-  //Defining validation state
-  const [validation, setvalidation] = useState(true);
   // Defining the step of the form
   const [Step, setStep] = useState(1);
   // Defining the input state of the form
@@ -169,6 +169,12 @@ function chnagingstep(
         ...ContcatData,
         inputName: "",
       });
+      setMonitorState({
+        ...monitorState,
+        inputData: "",
+        command: "",
+        massage: `Sending...`,
+      });
       sendEmail(form, monitorState, setMonitorState);
     }
     return (Step = prevValue + 1);
@@ -178,10 +184,10 @@ function chnagingstep(
 const sendEmail = (form, monitorState, setMonitorState) => {
   emailjs
     .sendForm(
-      process.env.SERVICE_KEY,
-      process.env.TEMPLATE_KEY,
+      process.env.REACT_APP_SERVICE_KEY,
+      process.env.REACT_APP_TEMPLATE_KEY,
       form.current,
-      process.env.USER_KEY
+      process.env.REACT_APP_USER_KEY
     )
     .then(
       (result) => {
