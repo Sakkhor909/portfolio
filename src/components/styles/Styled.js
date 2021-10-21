@@ -21,18 +21,10 @@ export const Keyboard = styled.div`
   justify-content: ${({ button }) =>
     button == "contact" ? "center" : "space-evenly"};
   align-items: center;
-  background: rgba(255, 255, 255, 0.6);
+  background: white;
   box-shadow: 6px 9px 0px 2px rgb(0 0 0 / 25%);
   border-radius: 10px;
   padding: 1rem;
-  & .inputBtn {
-    border-radius: 0px 10px 10px 0px;
-  }
-  & .backBtn {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
   @media only screen and (max-width: 750px) {
     height: 40vh;
     justify-content: ${({ button }) =>

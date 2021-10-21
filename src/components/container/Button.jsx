@@ -1,22 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-function Buttons({ Text, Icon, handelClicked, buttonName, className, Type }) {
-  if (buttonName === "contact") {
-    className = "inputBtn";
-  } else {
-    null;
-  }
-  return (
-    <KeyButton onClick={handelClicked} className={className} type={Type}>
-      <i className={`fa-solid ${Icon}`}></i> {Text}
-    </KeyButton>
-  );
-}
-
-export default Buttons;
-
-const KeyButton = styled.button`
+const Button = styled.button`
   background: #bababa;
   box-shadow: 2px 3px 0px 2px rgb(0 0 0 / 25%);
   text-align: center;
@@ -27,6 +11,19 @@ const KeyButton = styled.button`
   transition: 0.3s;
   outline: none;
   border: none;
+
+  ${({ name }) =>
+    name === "backButton" &&
+    css`
+      position: absolute;
+      top: 0;
+      left: 0;
+    `}
+  ${({ name }) =>
+    name === "nextInput" &&
+    css`
+      border-radius: 0px 10px 10px 0px;
+    `}
   @media (hover: hover) {
     &:hover,
     :focus {
@@ -52,8 +49,29 @@ const KeyButton = styled.button`
       box-shadow: 1px 2px 0px 2px rgb(0 0 0 / 25%);
     }
   }
+  ${({ name }) =>
+    name === "themeButton" &&
+    css`
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 5px;
+      @media (hover: hover) {
+        &:hover,
+        :focus {
+          color: #35b833;
+          background: white;
+          transform: translateY(0px);
+        }
+        &:active {
+          transform: translateY(5px);
+        }
+      }
+    `}
   @media only screen and (max-width: 750px) {
     font-size: 1rem;
     margin-left: 0%;
   }
 `;
+
+export default Button;

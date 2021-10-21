@@ -3,7 +3,8 @@ import GlobalStyles from "./styles/Global";
 import { Body, Container, Keyboard } from "./styles/Styled";
 import Monitor from "./Monitor/Monitor";
 import { ButtonsData } from "./Monitor/MonitorData";
-import Button from "./Button";
+import Button from "./container/Button";
+import Icon from "./container/Icon";
 import ContactForm from "./ContactForm/ContactForm";
 
 function App() {
@@ -54,13 +55,9 @@ function App() {
           <Keyboard button={MonitorData.page}>
             {MonitorData.page === "contact" ? (
               <>
-                <Button
-                  Text="Back"
-                  Type="button"
-                  Icon="fa-arrow-alt-circle-left"
-                  className="backBtn"
-                  handelClicked={backto}
-                />
+                <Button type="button" name="backButton" onClick={backto}>
+                  <Icon name="arrow-alt-circle-left" /> Back
+                </Button>
                 <ContactForm
                   monitorState={MonitorData}
                   setMonitorState={setMonitorData}
@@ -72,9 +69,7 @@ function App() {
                   <Button
                     key={button.id}
                     Type="button"
-                    Text={button.Text}
-                    Icon={button.Icon}
-                    handelClicked={() =>
+                    onClick={() =>
                       TabCommand(
                         button.command,
                         button.MonitorData,
@@ -83,7 +78,9 @@ function App() {
                         button.page
                       )
                     }
-                  />
+                  >
+                    <Icon name={button.Icon} /> {button.Text}
+                  </Button>
                 ))}
               </>
             )}
