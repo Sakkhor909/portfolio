@@ -7,20 +7,30 @@ import {
 } from "./Monitor.styled";
 import MyImage from "../MyImage";
 import Typewriter from "typewriter-effect";
-import Button from "../container/Button";
+import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
 
-function Monitor({ command, Massage, speed, Display, inputData, errorData }) {
-
-  const themeChange = () => {
-     console.log("working");
-  }
+function Monitor({ command, Massage, speed, Display, inputData, errorData, setTheme }) {
+  const ChangeTheme = () => {
+    if (localStorage.theme == "light") {
+      if (typeof Storage !== "undefined") {
+        localStorage.theme = "dark";
+        setTheme("dark");
+      }
+    } else {
+      if (typeof Storage !== "undefined") {
+        localStorage.theme = "light";
+        setTheme("light");
+      }
+    }
+  };
+  const themeButtonIcon = localStorage.theme == "light" ? "moon" : "sun";
 
   return (
     <StyledMonitor>
       <MyImage />
-      <Button name="themeButton" onClick={themeChange}>
-        <Icon name="moon" />
+      <Button name="themeButton" onClick={ChangeTheme}>
+        <Icon name={themeButtonIcon} />
       </Button>
       <MonitorMassage Display={Display}>
         <span className="command">&gt; {command && `${command}: `}</span>

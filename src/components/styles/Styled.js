@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
+// background-color: ${({ themes }) => theme.BodyColor};
+
 export const Body = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: ${({ theme }) => theme.color.BodyColor};
+  background-color: ${({ theme }) => theme.BodyColor};
   padding: 4% 6%;
+  transition: all 0.5s ease;
 `;
 
 export const Container = styled.div`
@@ -21,7 +24,8 @@ export const Keyboard = styled.div`
   justify-content: ${({ button }) =>
     button == "contact" ? "center" : "space-evenly"};
   align-items: center;
-  background: white;
+  background: ${({ theme }) => theme.KeyboardBodyColor};
+  border: ${({ theme }) => theme.Border};
   box-shadow: 6px 9px 0px 2px rgb(0 0 0 / 25%);
   border-radius: 10px;
   padding: 1rem;

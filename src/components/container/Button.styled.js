@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-
+import { Color } from "../../theme";
 const Button = styled.button`
   background: #bababa;
   box-shadow: 2px 3px 0px 2px rgb(0 0 0 / 25%);
@@ -27,7 +27,7 @@ const Button = styled.button`
   @media (hover: hover) {
     &:hover,
     :focus {
-      color: #35b833;
+      color: ${({ theme }) => theme.HoverColor};
       background: rgba(255, 255, 255, 0.6);
       transform: translateY(-5px);
       box-shadow: 4px 6px 0px 2px rgb(0 0 0 / 25%);
@@ -39,7 +39,7 @@ const Button = styled.button`
   }
   @media (hover: none) {
     &:focus {
-      color: #35b833;
+      color: ${({ theme }) => theme.HoverColor};
       background: rgba(255, 255, 255, 0.6);
       transform: translateY(-5px);
       box-shadow: 4px 6px 0px 2px rgb(0 0 0 / 25%);
@@ -59,7 +59,7 @@ const Button = styled.button`
       @media (hover: hover) {
         &:hover,
         :focus {
-          color: #35b833;
+          color: ${Color.seconderyColor};
           background: white;
           transform: translateY(0px);
         }

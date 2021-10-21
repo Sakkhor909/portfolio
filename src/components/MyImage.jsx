@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "../assets/images/MyImage.jpg";
 
-const MyImage = () => <MyImageCSS src={Image} alt="My Image" />
+const MyImage = () => <MyImageCSS src={Image} alt="My Image" />;
 
 export default MyImage;
 
@@ -12,7 +12,7 @@ const MyImageCSS = styled.img`
   position: absolute;
   top: 0;
   right: 0;
-  border-radius: 15% 0px 15% 15%;
+  border-radius: 15% 10px 15% 15%;
   @media (orientation: portrait) {
     width: 25%;
     height: 25%;

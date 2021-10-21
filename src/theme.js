@@ -1,7 +1,28 @@
-const theme = {
-    color: {
-        BodyColor : "#A8A8A8"
-    }
-}
+export const Color = {
+  primaryColor: "#A8A8A8",
+  seconderyColor: "#35b833",
+  black: "#000000",
+  white: "#ffffff",
+};
 
-export default theme;
+const lightTheme = {
+  BodyColor: Color.primaryColor,
+  KeyboardBodyColor: Color.white,
+  HoverColor: Color.seconderyColor,
+};
+
+
+
+const darkTheme = {
+  BodyColor: Color.black,
+  Border: `1px solid ${Color.primaryColor}`,
+  KeyboardBodyColor: Color.black,
+  HoverColor: Color.white,
+};
+
+const themes = {
+  light: lightTheme,
+  dark: darkTheme,
+};
+
+export default themes;

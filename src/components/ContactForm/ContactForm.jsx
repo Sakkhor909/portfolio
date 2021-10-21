@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
 import Input from "./Input";
-import Button from "../container/Button";
+import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
 import { init } from "emailjs-com";
 init(process.env.REACT_APP_USER_KEY);
@@ -80,7 +80,10 @@ function ContactForm({ monitorState, setMonitorState }) {
         />
         <Input inputtype="hidden" name="Hname" value={ContcatData.name} />
         <Input inputtype="hidden" name="Hemail" value={ContcatData.email} />
-        <Button  Type="submit" name="nextInput" >  <Icon name="greater-than" /> </Button>
+        <Button Type="submit" name="nextInput">
+          {" "}
+          <Icon name="greater-than" />{" "}
+        </Button>
       </StyledContactForm>
     );
   }

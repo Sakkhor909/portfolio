@@ -6,6 +6,7 @@ export const StyledMonitor = styled.div`
   margin: 0 auto;
   background: #000000;
   box-shadow: 7px 0px 4px rgba(0, 0, 0, 0.25);
+  border: ${({ theme }) => theme.Border};
   border-radius: 10px;
   display: flex;
   align-items: center;

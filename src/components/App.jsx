@@ -1,13 +1,22 @@
 import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import themes from "../theme";
 import GlobalStyles from "./styles/Global";
 import { Body, Container, Keyboard } from "./styles/Styled";
 import Monitor from "./Monitor/Monitor";
 import { ButtonsData } from "./Monitor/MonitorData";
-import Button from "./container/Button";
+import Button from "./container/Button.styled";
 import Icon from "./container/Icon";
 import ContactForm from "./ContactForm/ContactForm";
 
 function App() {
+  // defining theme value
+  if (typeof Storage !== "undefined") {
+    if (!localStorage.theme) {
+      localStorage.setItem("theme", "light");
+    }
+  }
+  const [theme, setTheme] = useState(localStorage.theme);
   // Defining Monitor Data state
   const [MonitorData, setMonitorData] = useState({
     command: null,
@@ -40,7 +49,7 @@ function App() {
     event.target.blur();
   };
   return (
-    <>
+    <ThemeProvider theme={themes[theme]}>
       <GlobalStyles />
       <Body>
         <Container>
@@ -51,6 +60,7 @@ function App() {
             Display={MonitorData.display}
             inputData={MonitorData.inputData}
             errorData={MonitorData.errorData}
+            setTheme={setTheme}
           />
           <Keyboard button={MonitorData.page}>
             {MonitorData.page === "contact" ? (
@@ -87,7 +97,7 @@ function App() {
           </Keyboard>
         </Container>
       </Body>
-    </>
+    </ThemeProvider>
   );
 }
 
