@@ -47,15 +47,11 @@ function ContactStateKeyboard({ MonitorData, setMonitorData }) {
   };
   // function for changing focus
   const handelFocus = () => {
-    if (window.innerHeight > window.innerWidth) {
-      setbackButtonDisplay(false);
-    }
+
   };
   // function for on blur
   const handelBlur = () => {
-    if (window.innerHeight > window.innerWidth) {
-        setbackButtonDisplay(true);
-      }
+  
   }
   return (
     <>

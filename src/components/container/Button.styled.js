@@ -18,6 +18,8 @@ const Button = styled.button`
       position: absolute;
       top: 0;
       left: 0;
+      padding: 5px;
+      box-shadow: none;
     `}
   ${({ name }) =>
     name === "nextInput" &&
