@@ -8,6 +8,7 @@ import { ButtonsData } from "./Monitor/MonitorData";
 import Button from "./container/Button.styled";
 import Icon from "./container/Icon";
 import ContactStateKeyboard from "./ContactStateKeyboard/ContactStateKeyboard";
+import sound from "../assets/sound/click.wav";
 
 function App() {
   // defining theme value
@@ -29,6 +30,8 @@ function App() {
   });
   // Function for keyboard command
   const TabCommand = (command, massage, speed, display, page) => {
+    // play sound
+    new Audio(sound).play();
     // Changing monitor data
     ShowToMonitor(
       MonitorData,

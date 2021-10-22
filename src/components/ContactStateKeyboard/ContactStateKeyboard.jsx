@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ContactForm from "./ContactForm/ContactForm";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
+import Sound from '../../assets/sound/click.wav';
 function ContactStateKeyboard({ MonitorData, setMonitorData }) {
   // Defining The contact data state
   const [ContcatData, setContcatData] = useState({
@@ -12,6 +13,7 @@ function ContactStateKeyboard({ MonitorData, setMonitorData }) {
   });
   // Function for back to Home section
   const backto = (event) => {
+    // need to include step
     if (MonitorData.inputData !== "") {
       const clickOK = confirm(
         "All data you input will be lost, are you sure ?"
@@ -23,6 +25,8 @@ function ContactStateKeyboard({ MonitorData, setMonitorData }) {
         return;
       }
     } else {
+    // play sound
+    new Audio(Sound).play();
       ResetMonitor(MonitorData, setMonitorData);
       event.target.blur();
     }
@@ -45,9 +49,9 @@ function ContactStateKeyboard({ MonitorData, setMonitorData }) {
   };
   return (
     <>
-        <Button type="button" name="backButton" onClick={backto} title="Back">
-          <Icon name="arrow-alt-circle-left" />
-        </Button>
+      <Button type="button" name="backButton" onClick={backto} title="Back">
+        <Icon name="arrow-alt-circle-left" />
+      </Button>
       <ContactForm
         monitorState={MonitorData}
         setMonitorState={setMonitorData}

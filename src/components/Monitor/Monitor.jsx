@@ -11,6 +11,7 @@ import image from "../../assets/images/MyImage.jpg";
 import Typewriter from "typewriter-effect";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
+import Sound from "../../assets/sound/click.wav";
 
 function Monitor({
   command,
@@ -22,6 +23,8 @@ function Monitor({
   setTheme,
 }) {
   const ChangeTheme = () => {
+    // play sound
+    new Audio(Sound).play();
     if (localStorage.theme == "light") {
       if (typeof Storage !== "undefined") {
         localStorage.theme = "dark";

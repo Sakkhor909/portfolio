@@ -5,6 +5,7 @@ import emailjs from "emailjs-com";
 import Input from "./Input";
 import Button from "../../container/Button.styled";
 import Icon from "../../container/Icon";
+import Sound from '../../../assets/sound/click.wav';
 import { init } from "emailjs-com";
 init(process.env.REACT_APP_USER_KEY);
 
@@ -30,6 +31,9 @@ function ContactForm({
     const inputValue = event.target[0].defaultValue.trim();
     const validate = Validation(monitorState, setMonitorState, inputValue);
     if (validate) {
+    // play sound
+    new Audio(Sound).play();
+    // go to next step
       chnagingstep(
         Step,
         setStep,
