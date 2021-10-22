@@ -1,12 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-import Image from "../assets/images/MyImage.jpg";
 
-const MyImage = () => <MyImageCSS src={Image} alt="My Image" />;
-
-export default MyImage;
-
-const MyImageCSS = styled.img`
+const MyImage = styled.img`
   width: 15%;
   height: 40%;
   position: absolute;
@@ -17,7 +11,9 @@ const MyImageCSS = styled.img`
     width: 25%;
     height: 25%;
     border-radius: 50%;
-    top: -5%;
-    right: -5%;
+    top: -4%;
+    right: -6%;
   }
 `;
+
+export default MyImage;

@@ -7,9 +7,10 @@ import Monitor from "./Monitor/Monitor";
 import { ButtonsData } from "./Monitor/MonitorData";
 import Button from "./container/Button.styled";
 import Icon from "./container/Icon";
-import ContactForm from "./ContactForm/ContactForm";
+import ContactStateKeyboard from "./ContactStateKeyboard/ContactStateKeyboard";
 
 function App() {
+
   // defining theme value
   if (typeof Storage !== "undefined") {
     if (!localStorage.theme) {
@@ -40,14 +41,7 @@ function App() {
       page
     );
   };
-  // Function for back to Home section
-  const backto = (event) => {
-    if (MonitorData.inputData !== "") {
-      alert("All data you input will be lost, are you sure ?");
-    }
-    ResetMonitor(MonitorData, setMonitorData);
-    event.target.blur();
-  };
+
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyles />
@@ -64,15 +58,10 @@ function App() {
           />
           <Keyboard button={MonitorData.page}>
             {MonitorData.page === "contact" ? (
-              <>
-                <Button type="button" name="backButton" onClick={backto}>
-                  <Icon name="arrow-alt-circle-left" /> Back
-                </Button>
-                <ContactForm
-                  monitorState={MonitorData}
-                  setMonitorState={setMonitorData}
-                />
-              </>
+              <ContactStateKeyboard
+                MonitorData={MonitorData}
+                setMonitorData={setMonitorData}
+              />
             ) : (
               <>
                 {ButtonsData.map((button) => (
@@ -124,15 +113,4 @@ function ShowToMonitor(
   });
 }
 
-function ResetMonitor(MonitorData, setMonitorData) {
-  setMonitorData({
-    ...MonitorData,
-    command: null,
-    massage: "Welcome to my website",
-    speed: 100,
-    display: null,
-    page: "home",
-    inputData: "",
-    errorData: null,
-  });
-}
+

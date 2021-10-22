@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// background-color: ${({ themes }) => theme.BodyColor};
-
 export const Body = styled.div`
   width: 100%;
   height: 100vh;
@@ -21,6 +19,7 @@ export const Keyboard = styled.div`
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  transition: all 0.5s ease;
   justify-content: ${({ button }) =>
     button == "contact" ? "center" : "space-evenly"};
   align-items: center;

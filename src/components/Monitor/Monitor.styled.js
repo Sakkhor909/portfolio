@@ -30,9 +30,6 @@ export const MonitorMassage = styled.div`
   @media (orientation: portrait) {
     margin-right: 0%;
   }
-  .command {
-    color: yellowgreen;
-  }
   .Typewriter {
     display: inline;
     .Typewriter__wrapper {
@@ -45,6 +42,10 @@ export const MonitorMassage = styled.div`
       }
     }
   }
+`;
+
+export const Command = styled.span`
+  color: yellowgreen;
 `;
 
 export const Blinker = styled.span`

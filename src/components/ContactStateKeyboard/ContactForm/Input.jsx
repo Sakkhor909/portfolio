@@ -1,7 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-function Input({ name, inputtype, value, handelChange, placeholder }) {
+function Input({
+  name,
+  inputtype,
+  value,
+  handelChange,
+  placeholder,
+  handelFocus,
+  handelBlur,
+}) {
   let inputElement = null;
   switch (inputtype) {
     case "text":
@@ -11,6 +19,8 @@ function Input({ name, inputtype, value, handelChange, placeholder }) {
           type="text"
           value={value}
           onChange={handelChange}
+          onFocus={handelFocus}
+          onBlur={handelBlur}
           autoComplete="off"
           required
           placeholder={placeholder}
@@ -28,6 +38,7 @@ function Input({ name, inputtype, value, handelChange, placeholder }) {
           type="email"
           value={value}
           onChange={handelChange}
+          onFocus={handelFocus}
           autoComplete="off"
           required
           placeholder={placeholder}
@@ -42,6 +53,7 @@ function Input({ name, inputtype, value, handelChange, placeholder }) {
         <StyledTextArea
           name={name}
           onChange={handelChange}
+          onFocus={handelFocus}
           value={value}
           placeholder={placeholder}
           required

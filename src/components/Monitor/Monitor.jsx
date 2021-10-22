@@ -2,15 +2,25 @@ import React from "react";
 import {
   StyledMonitor,
   MonitorMassage,
+  Command,
   Blinker,
   ErroeData,
 } from "./Monitor.styled";
-import MyImage from "../MyImage";
+import MyImage from "../container/MyImage.styled";
+import image from "../../assets/images/MyImage.jpg";
 import Typewriter from "typewriter-effect";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
 
-function Monitor({ command, Massage, speed, Display, inputData, errorData, setTheme }) {
+function Monitor({
+  command,
+  Massage,
+  speed,
+  Display,
+  inputData,
+  errorData,
+  setTheme,
+}) {
   const ChangeTheme = () => {
     if (localStorage.theme == "light") {
       if (typeof Storage !== "undefined") {
@@ -28,12 +38,12 @@ function Monitor({ command, Massage, speed, Display, inputData, errorData, setTh
 
   return (
     <StyledMonitor>
-      <MyImage />
-      <Button name="themeButton" onClick={ChangeTheme}>
+      <MyImage src={image} alt="my image" />
+      <Button name="themeButton" onClick={ChangeTheme} title="Change Theme">
         <Icon name={themeButtonIcon} />
       </Button>
       <MonitorMassage Display={Display}>
-        <span className="command">&gt; {command && `${command}: `}</span>
+        <Command>&gt; {command && `${command}: `}</Command>
         <Typewriter
           options={{
             strings: Massage,

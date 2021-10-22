@@ -8,7 +8,7 @@ export const Color = {
 const lightTheme = {
   BodyColor: Color.primaryColor,
   KeyboardBodyColor: Color.white,
-  HoverColor: Color.seconderyColor,
+ 
 };
 
 
@@ -17,7 +17,7 @@ const darkTheme = {
   BodyColor: Color.black,
   Border: `1px solid ${Color.primaryColor}`,
   KeyboardBodyColor: Color.black,
-  HoverColor: Color.white,
+
 };
 
 const themes = {

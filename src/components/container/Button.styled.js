@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { Color } from "../../theme";
 const Button = styled.button`
   background: #bababa;
-  box-shadow: 2px 3px 0px 2px rgb(0 0 0 / 25%);
+  box-shadow: 2px 3px 0px 2px ${Color.primaryColor};
   text-align: center;
   padding: 1rem;
   border-radius: 10px;
@@ -23,14 +23,15 @@ const Button = styled.button`
     name === "nextInput" &&
     css`
       border-radius: 0px 10px 10px 0px;
+      box-shadow: 2px 0px 0px 2px ${Color.primaryColor};
     `}
   @media (hover: hover) {
     &:hover,
     :focus {
-      color: ${({ theme }) => theme.HoverColor};
-      background: rgba(255, 255, 255, 0.6);
+      color: ${Color.seconderyColor};
+      background: #e8ede6;
       transform: translateY(-5px);
-      box-shadow: 4px 6px 0px 2px rgb(0 0 0 / 25%);
+      box-shadow: 4px 6px 0px 2px ${Color.primaryColor};
     }
     &:active {
       transform: translateY(5px);
@@ -39,8 +40,8 @@ const Button = styled.button`
   }
   @media (hover: none) {
     &:focus {
-      color: ${({ theme }) => theme.HoverColor};
-      background: rgba(255, 255, 255, 0.6);
+      color: ${Color.seconderyColor};
+      background: #e8ede6;
       transform: translateY(-5px);
       box-shadow: 4px 6px 0px 2px rgb(0 0 0 / 25%);
     }
@@ -56,11 +57,11 @@ const Button = styled.button`
       left: 0;
       top: 0;
       padding: 5px;
+      box-shadow: none;
       @media (hover: hover) {
         &:hover,
         :focus {
-          color: ${Color.seconderyColor};
-          background: white;
+          box-shadow: none;
           transform: translateY(0px);
         }
         &:active {

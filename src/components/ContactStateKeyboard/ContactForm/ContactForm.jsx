@@ -3,20 +3,21 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
 import Input from "./Input";
-import Button from "../container/Button.styled";
-import Icon from "../container/Icon";
+import Button from "../../container/Button.styled";
+import Icon from "../../container/Icon";
 import { init } from "emailjs-com";
 init(process.env.REACT_APP_USER_KEY);
 
-function ContactForm({ monitorState, setMonitorState }) {
+function ContactForm({
+  monitorState,
+  setMonitorState,
+  handelChange,
+  ContcatData,
+  setContcatData,
+  handelFocus,
+  handelBlur
+}) {
   const form = useRef();
-  // Defining The contact data state
-  const [ContcatData, setContcatData] = useState({
-    name: "",
-    email: "",
-    massage: "",
-    inputName: "name",
-  });
   // Defining the step of the form
   const [Step, setStep] = useState(1);
   // Defining the input state of the form
@@ -25,21 +26,6 @@ function ContactForm({ monitorState, setMonitorState }) {
     Placeholder: "Type your name here",
   });
 
-  const handelChange = (event) => {
-    let inputData = event.target.value;
-    const Name = event.target.name;
-    // Showing data to monitor
-    setMonitorState({
-      ...monitorState,
-      inputData: inputData,
-      errorData: null,
-    });
-    // setting the contact data into state
-    setContcatData({
-      ...ContcatData,
-      [Name]: inputData,
-    });
-  };
   // Function for the submission of the contact data
   const handelSubmit = (event, Step, form) => {
     event.preventDefault();
@@ -77,6 +63,8 @@ function ContactForm({ monitorState, setMonitorState }) {
           value={monitorState.inputData}
           placeholder={InputState.Placeholder}
           name={ContcatData.inputName}
+          handelFocus={handelFocus}
+          handelBlur={handelBlur}
         />
         <Input inputtype="hidden" name="Hname" value={ContcatData.name} />
         <Input inputtype="hidden" name="Hemail" value={ContcatData.email} />
