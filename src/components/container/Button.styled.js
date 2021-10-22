@@ -18,9 +18,9 @@ const Button = styled.button`
       position: absolute;
       top: 0;
       left: 0;
-      @media (orientation: portrait) {
+      @media only screen and (max-width: 750px) {
         padding: 5px;
-      box-shadow: none;
+        box-shadow: none;
       }
     `}
   ${({ name }) =>
