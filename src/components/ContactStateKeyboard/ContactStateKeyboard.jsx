@@ -3,8 +3,6 @@ import ContactForm from "./ContactForm/ContactForm";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
 function ContactStateKeyboard({ MonitorData, setMonitorData }) {
-  // Backbutton display
-  const [backButtonDisplay, setbackButtonDisplay] = useState(true);
   // Defining The contact data state
   const [ContcatData, setContcatData] = useState({
     name: "",
@@ -45,29 +43,17 @@ function ContactStateKeyboard({ MonitorData, setMonitorData }) {
       [Name]: inputData,
     });
   };
-  // function for changing focus
-  const handelFocus = () => {
-
-  };
-  // function for on blur
-  const handelBlur = () => {
-  
-  }
   return (
     <>
-      {backButtonDisplay && (
         <Button type="button" name="backButton" onClick={backto} title="Back">
           <Icon name="arrow-alt-circle-left" />
         </Button>
-      )}
       <ContactForm
         monitorState={MonitorData}
         setMonitorState={setMonitorData}
         ContcatData={ContcatData}
         setContcatData={setContcatData}
         handelChange={handelChange}
-        handelFocus={handelFocus}
-        handelBlur={handelBlur}
       />
     </>
   );

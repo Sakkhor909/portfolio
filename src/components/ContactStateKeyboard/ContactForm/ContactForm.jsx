@@ -14,8 +14,6 @@ function ContactForm({
   handelChange,
   ContcatData,
   setContcatData,
-  handelFocus,
-  handelBlur
 }) {
   const form = useRef();
   // Defining the step of the form
@@ -63,8 +61,6 @@ function ContactForm({
           value={monitorState.inputData}
           placeholder={InputState.Placeholder}
           name={ContcatData.inputName}
-          handelFocus={handelFocus}
-          handelBlur={handelBlur}
         />
         <Input inputtype="hidden" name="Hname" value={ContcatData.name} />
         <Input inputtype="hidden" name="Hemail" value={ContcatData.email} />

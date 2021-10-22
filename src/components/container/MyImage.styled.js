@@ -9,7 +9,7 @@ const MyImage = styled.img`
   border-radius: 15% 10px 15% 15%;
   @media (orientation: portrait) {
     width: 25%;
-    height: 25%;
+    height: 30%;
     border-radius: 50%;
     top: -4%;
     right: -6%;
