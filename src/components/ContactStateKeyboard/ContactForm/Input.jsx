@@ -39,6 +39,7 @@ function Input({
           value={value}
           onChange={handelChange}
           onFocus={handelFocus}
+          onBlur={handelBlur}
           autoComplete="off"
           required
           placeholder={placeholder}
@@ -54,6 +55,7 @@ function Input({
           name={name}
           onChange={handelChange}
           onFocus={handelFocus}
+          onBlur={handelBlur}
           value={value}
           placeholder={placeholder}
           required

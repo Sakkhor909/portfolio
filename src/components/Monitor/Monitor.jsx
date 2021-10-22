@@ -52,7 +52,7 @@ function Monitor({
             cursor: null,
           }}
         />
-        <span>{inputData}</span>
+        <code>{inputData}</code>
         <Blinker>|</Blinker>
         {errorData && (
           <ErroeData>

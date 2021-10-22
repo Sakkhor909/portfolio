@@ -10,7 +10,6 @@ import Icon from "./container/Icon";
 import ContactStateKeyboard from "./ContactStateKeyboard/ContactStateKeyboard";
 
 function App() {
-
   // defining theme value
   if (typeof Storage !== "undefined") {
     if (!localStorage.theme) {
@@ -78,7 +77,7 @@ function App() {
                       )
                     }
                   >
-                    <Icon name={button.Icon} /> {button.Text}
+                    <Icon name={button.Icon} /> <kbd>{button.Text}</kbd>
                   </Button>
                 ))}
               </>
@@ -112,5 +111,3 @@ function ShowToMonitor(
     errorData: null,
   });
 }
-
-
