@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ContactForm from "./ContactForm/ContactForm";
+import ContactForm from "./ContactForm";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
 import Sound from '../../assets/sound/click.wav';

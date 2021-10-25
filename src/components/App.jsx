@@ -4,10 +4,10 @@ import themes from "../theme";
 import GlobalStyles from "./styles/Global";
 import { Body, Container, Keyboard } from "./styles/Styled";
 import Monitor from "./Monitor/Monitor";
-import { ButtonsData } from "./Monitor/MonitorData";
+import { ButtonsData } from "../config";
 import Button from "./container/Button.styled";
 import Icon from "./container/Icon";
-import ContactStateKeyboard from "./ContactStateKeyboard/ContactStateKeyboard";
+import ContactStateKeyboard from "./ContactStateKeyboard";
 import sound from "../assets/sound/click.wav";
 
 function App() {

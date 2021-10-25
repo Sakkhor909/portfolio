@@ -23,20 +23,33 @@ export const ButtonsData = [
   },
   {
     id: 4,
-    command: "Projects",
-    Text: "Projects",
-    Icon: "diagram-project",
+    command: "Skill",
+    Text: "Skill",
+    Icon: "tools",
     MonitorData: `<ul>
-    <li> Raw Javascript : 
-    <a href="https://sakkhor909.github.io/javascript-projects/webcolorgame/" target="_blank"> Web Color Game </a>
-    </li>
-    <li> Live Project : <a href="https://khuji.net/" target="_blank"> Khuji </a> </li>
+    <li> HTML, CSS, SASS</li>
+    <li> JavaScript, React JS </li>
+    <li> Node JS, Express JS </li>
     </ul>`,
     typingSpeed: 70,
     display: "inline-block",
   },
   {
     id: 5,
+    command: "Projects",
+    Text: "Projects",
+    Icon: "diagram-project",
+    MonitorData: `<ul>
+      <li> Raw Javascript : 
+      <a href="https://sakkhor909.github.io/javascript-projects/webcolorgame/" target="_blank"> Web Color Game </a>
+      </li>
+      <li> Live Project : <a href="https://khuji.net/" target="_blank"> Khuji </a> </li>
+      </ul>`,
+    typingSpeed: 70,
+    display: "inline-block",
+  },
+  {
+    id: 6,
     command: "Your Name",
     Text: "Contact",
     Icon: "envelope",
@@ -44,5 +57,19 @@ export const ButtonsData = [
     typingSpeed: 70,
     display: "inline-block",
     page: "contact",
+  },
+];
+
+// Need to add project from here
+export const Projects = [
+  {
+    title: "Raw Javascript :",
+    name: "Web Color Game",
+    link: "https://sakkhor909.github.io/javascript-projects/webcolorgame/",
+  },
+  {
+    title: "Live Project :",
+    name: "Khuji",
+    link: "https://khuji.net/",
   },
 ];
