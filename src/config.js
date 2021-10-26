@@ -41,7 +41,7 @@ export const ButtonsData = [
     Icon: "diagram-project",
     MonitorData: `<ul>
       <li> Raw Javascript : 
-      <a href="https://sakkhor909.github.io/javascript-projects/webcolorgame/" target="_blank"> Web Color Game </a>
+      <a href="https://sakkhor909.github.io/raw-javascript-projects/webcolorgame/" target="_blank"> Web Color Game </a>
       </li>
       <li> Live Project : <a href="https://khuji.net/" target="_blank"> Khuji </a> </li>
       </ul>`,
