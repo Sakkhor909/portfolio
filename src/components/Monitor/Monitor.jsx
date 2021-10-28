@@ -1,3 +1,4 @@
+// Need to work on my own type effect
 import React from "react";
 import {
   StyledMonitor,
@@ -12,6 +13,7 @@ import Typewriter from "typewriter-effect";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
 import Sound from "../../assets/sound/click.wav";
+// import Type from "./Type";
 
 function Monitor({
   command,
@@ -46,6 +48,9 @@ function Monitor({
         <Icon name={themeButtonIcon} />
       </Button>
       <MonitorMassage Display={Display}>
+        {/* <Type speed={speed} command={command}>
+          {Massage}
+        </Type> */}
         <Command>&gt; {command && `${command}: `}</Command>
         <Typewriter
           options={{
