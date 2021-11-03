@@ -3,10 +3,13 @@ import styled from "styled-components";
 export const StyledMonitor = styled.div`
   width: 70%;
   height: 50%;
-  margin: 0 auto;
+  margin: -20px auto;
+  @media (orientation: portrait) {
+    margin: -12px auto;
+  }
   background: #000000;
   box-shadow: 7px 0px 4px rgba(0, 0, 0, 0.25);
-  border: ${({ theme }) => theme.Border};
+  border: 15px inset rgb(145 145 145);
   border-radius: 10px;
   display: flex;
   align-items: center;

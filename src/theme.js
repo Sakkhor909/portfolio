@@ -13,7 +13,6 @@ const lightTheme = {
 
 const darkTheme = {
   BodyColor: Color.black,
-  Border: `1px solid ${Color.primaryColor}`,
   KeyboardBodyColor: Color.black,
   boxShadow: "2px 9px 0px 2px rgb(145 145 145)",
 };

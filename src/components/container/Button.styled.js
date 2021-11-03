@@ -3,7 +3,7 @@ import { Color } from "../../theme";
 const Button = styled.button`
   background: #bababa;
   box-shadow: 2px 3px 0px 2px ${Color.primaryColor},
-    44px 8px 0px ${Color.primaryColor} inset;
+    2px 3px 0px ${Color.primaryColor} inset;
   text-align: center;
   padding: 1rem;
   border-radius: 10px;
@@ -12,7 +12,6 @@ const Button = styled.button`
   transition: 0.3s;
   outline: none;
   border: none;
-
   ${({ name }) =>
     name === "backButton" &&
     css`
@@ -63,6 +62,7 @@ const Button = styled.button`
       left: 0;
       top: 0;
       padding: 5px;
+      border-radius: 0px 10px 10px 10px;
       box-shadow: none;
       @media (hover: hover) {
         &:hover,

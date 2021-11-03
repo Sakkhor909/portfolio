@@ -6,13 +6,10 @@ const MyImage = styled.img`
   position: absolute;
   top: 0;
   right: 0;
-  border-radius: 15% 10px 15% 15%;
+  border-radius: 15% 0px 15% 15%;
   @media (orientation: portrait) {
     width: 25%;
     height: 30%;
-    border-radius: 50%;
-    top: -4%;
-    right: -6%;
   }
 `;
 
