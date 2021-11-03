@@ -2,7 +2,8 @@ import styled, { css } from "styled-components";
 import { Color } from "../../theme";
 const Button = styled.button`
   background: #bababa;
-  box-shadow: 2px 3px 0px 2px ${Color.primaryColor};
+  box-shadow: 2px 3px 0px 2px ${Color.primaryColor},
+    44px 8px 0px ${Color.primaryColor} inset;
   text-align: center;
   padding: 1rem;
   border-radius: 10px;
@@ -18,6 +19,7 @@ const Button = styled.button`
       position: absolute;
       top: 0;
       left: 0;
+      box-shadow: 2px 3px 0px 2px ${Color.primaryColor};
       @media only screen and (max-width: 750px) {
         padding: 5px;
         box-shadow: none;
@@ -27,7 +29,7 @@ const Button = styled.button`
     name === "nextInput" &&
     css`
       border-radius: 0px 10px 10px 0px;
-      box-shadow: 2px 0px 0px 2px ${Color.primaryColor};
+      box-shadow: 0px 3px 0px 2px rgb(0 0 0 / 25%);
     `}
   @media (hover: hover) {
     &:hover,
