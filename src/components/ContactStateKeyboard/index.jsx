@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ContactForm from "./ContactForm";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
-import Sound from '../../assets/sound/click.wav';
+import Sound from "../../assets/sound/click.wav";
+const ClickSound = new Audio(Sound);
+
 function ContactStateKeyboard({ MonitorData, setMonitorData }) {
   // Defining The contact data state
   const [ContcatData, setContcatData] = useState({
@@ -25,8 +27,8 @@ function ContactStateKeyboard({ MonitorData, setMonitorData }) {
         return;
       }
     } else {
-    // play sound
-    new Audio(Sound).play();
+      // play sound
+      ClickSound.play();
       ResetMonitor(MonitorData, setMonitorData);
       event.target.blur();
     }

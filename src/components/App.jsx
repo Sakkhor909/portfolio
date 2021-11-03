@@ -10,6 +10,8 @@ import Icon from "./container/Icon";
 import ContactStateKeyboard from "./ContactStateKeyboard";
 import sound from "../assets/sound/click.wav";
 
+const ClickSound = new Audio(sound);
+
 function App() {
   // defining theme value
   if (typeof Storage !== "undefined") {
@@ -31,7 +33,7 @@ function App() {
   // Function for keyboard command
   const TabCommand = (command, massage, speed, display, page) => {
     // play sound
-    new Audio(sound).play();
+     ClickSound.play();
     // Changing monitor data
     ShowToMonitor(
       MonitorData,

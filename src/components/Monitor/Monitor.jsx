@@ -13,7 +13,8 @@ import Typewriter from "typewriter-effect";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
 import Sound from "../../assets/sound/click.wav";
-// import Type from "./Type";
+// import Type from "./Type"; my own type component
+const ClickSound = new Audio(Sound);
 
 function Monitor({
   command,
@@ -26,7 +27,7 @@ function Monitor({
 }) {
   const ChangeTheme = () => {
     // play sound
-    new Audio(Sound).play();
+    ClickSound.play();
     if (localStorage.theme == "light") {
       if (typeof Storage !== "undefined") {
         localStorage.theme = "dark";

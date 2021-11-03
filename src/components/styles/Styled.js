@@ -21,7 +21,7 @@ export const Keyboard = styled.div`
   flex-wrap: wrap;
   transition: all 0.5s ease;
   justify-content: ${({ button }) =>
-    button == "contact" ? "center" : "space-evenly"};
+   button == "contact" ? "center" : "space-evenly"};
   align-items: center;
   background: ${({ theme }) => theme.KeyboardBodyColor};
   border: ${({ theme }) => theme.Border};
