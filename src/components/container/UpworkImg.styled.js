@@ -11,8 +11,8 @@ const UpworkImg = styled.img`
     transform: scale3d(1.3, 1.3, 1.5);
   }
   @media (orientation: portrait) {
-    width: 25%;
-    height: 30%;
+    width: 40px;
+    height: 35px;
   }
 `;
 

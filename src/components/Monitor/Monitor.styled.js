@@ -39,6 +39,9 @@ export const SocialLink = styled.a`
     &:hover {
       transform: scale3d(1.3, 1.3, 1.5);
     }
+    @media (orientation: portrait) {
+      font-size: 2rem;
+    }
   }
 `;
 
