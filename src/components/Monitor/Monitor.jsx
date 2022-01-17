@@ -2,13 +2,15 @@
 import React from "react";
 import {
   StyledMonitor,
+  SocialLinkSection,
+  SocialLink,
   MonitorMassage,
   Command,
   Blinker,
-  ErroeData,
+  ErroeData
 } from "./Monitor.styled";
-import MyImage from "../container/MyImage.styled";
-import image from "../../assets/images/MyImage.jpg";
+import UpworkImg from "../container/UpworkImg.styled";
+import image from "../../assets/images/upwork.png";
 import Typewriter from "typewriter-effect";
 import Button from "../container/Button.styled";
 import Icon from "../container/Icon";
@@ -23,7 +25,7 @@ function Monitor({
   Display,
   inputData,
   errorData,
-  setTheme,
+  setTheme
 }) {
   const ChangeTheme = () => {
     // play sound
@@ -44,7 +46,23 @@ function Monitor({
 
   return (
     <StyledMonitor>
-      <MyImage src={image} alt="my image" />
+      <SocialLinkSection>
+        <SocialLink
+          href="https://www.linkedin.com/in/minhajur-rahman/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-linkedin linkedin-icon"></i>
+        </SocialLink>
+        <a
+          href="https://www.upwork.com/freelancers/~01c9dc588b478ed0c3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <UpworkImg src={image} alt="Upwork" />
+        </a>
+      </SocialLinkSection>
+
       <Button name="themeButton" onClick={ChangeTheme} title="Change Theme">
         <Icon name={themeButtonIcon} />
       </Button>
@@ -58,7 +76,7 @@ function Monitor({
             strings: Massage,
             autoStart: true,
             delay: speed,
-            cursor: null,
+            cursor: null
           }}
         />
         <code>{inputData}</code>
@@ -70,7 +88,7 @@ function Monitor({
             <Typewriter
               options={{
                 strings: errorData,
-                autoStart: true,
+                autoStart: true
               }}
             />
           </ErroeData>

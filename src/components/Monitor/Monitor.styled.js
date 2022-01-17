@@ -8,7 +8,6 @@ export const StyledMonitor = styled.div`
     margin: -12px auto;
   }
   background: #000000;
-  box-shadow: 7px 0px 4px rgba(0, 0, 0, 0.25);
   border: 15px inset rgb(145 145 145);
   border-radius: 10px;
   display: flex;
@@ -18,6 +17,28 @@ export const StyledMonitor = styled.div`
   @media only screen and (max-width: 750px) {
     width: 100%;
     min-height: 25vh;
+  }
+`;
+
+export const SocialLinkSection = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const SocialLink = styled.a`
+  .linkedin-icon {
+    font-size: 3rem;
+    margin-right: 20px;
+    color: #0a66c2;
+    transform: perspective(500px) scale3d(1, 1, 1) translateZ(100px);
+    transition: all.5s transform ease-in;
+    &:hover {
+      transform: scale3d(1.3, 1.3, 1.5);
+    }
   }
 `;
 

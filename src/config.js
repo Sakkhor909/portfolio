@@ -5,14 +5,14 @@ export const ButtonsData = [
     command: "Name",
     Text: "Name",
     Icon: "user",
-    MonitorData: "Minhajur Rahman",
+    MonitorData: "Minhajur Rahman"
   },
   {
     id: 2,
     command: "Profession",
     Text: "Profession",
     Icon: "user-tie",
-    MonitorData: "Full Stack Developer",
+    MonitorData: "Full Stack Developer"
   },
   {
     id: 3,
@@ -20,7 +20,7 @@ export const ButtonsData = [
     Text: "Education",
     Icon: "user-graduate",
     MonitorData: `I have studied Bachelor of Business Administration (BBA) with a major in Management Information system (MIS) graduated from <a href="https://daffodilvarsity.edu.bd/" target="_blank"> Daffodil Internation University  </a>`,
-    typingSpeed: 40,
+    typingSpeed: 40
   },
   {
     id: 4,
@@ -29,11 +29,11 @@ export const ButtonsData = [
     Icon: "tools",
     MonitorData: `<ul>
     <li> HTML, CSS, SASS</li>
-    <li> JavaScript, React JS </li>
+    <li> JavaScript, React JS, Next JS, Ember JS </li>
     <li> Node JS, Express JS </li>
     </ul>`,
     typingSpeed: 70,
-    display: "inline-block",
+    display: "inline-block"
   },
   {
     id: 5,
@@ -44,10 +44,11 @@ export const ButtonsData = [
       <li> Raw Javascript : 
       <a href="https://sakkhor909.github.io/raw-javascript-projects/webcolorgame/" target="_blank"> Web Color Game </a>
       </li>
-      <li> Live Project : <a href="https://khuji.net/" target="_blank"> Khuji </a> </li>
+      <li> Directory Listing Website : <a href="https://khuji.vercel.app/" target="_blank"> Khuji </a> </li>
+      <li> Multi-Author Blogging Platform : <a href="https://blogism.vercel.app/" target="_blank"> Blogism </a> </li>
       </ul>`,
     typingSpeed: 70,
-    display: "inline-block",
+    display: "inline-block"
   },
   {
     id: 6,
@@ -57,8 +58,8 @@ export const ButtonsData = [
     MonitorData: "",
     typingSpeed: 70,
     display: "inline-block",
-    page: "contact",
-  },
+    page: "contact"
+  }
 ];
 
 // Need to add project from here
@@ -66,11 +67,11 @@ export const Projects = [
   {
     title: "Raw Javascript :",
     name: "Web Color Game",
-    link: "https://sakkhor909.github.io/javascript-projects/webcolorgame/",
+    link: "https://sakkhor909.github.io/javascript-projects/webcolorgame/"
   },
   {
     title: "Live Project :",
     name: "Khuji",
-    link: "https://khuji.net/",
-  },
+    link: "https://khuji.net/"
+  }
 ];
