@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import themes from "../theme";
 import GlobalStyles from "./styles/Global";
@@ -23,17 +23,51 @@ function App() {
   // Defining Monitor Data state
   const [MonitorData, setMonitorData] = useState({
     command: null,
-    massage: "Welcome to my website",
+    massage: ``,
     speed: 100,
     display: null,
     page: "home",
     inputData: "",
-    errorData: null,
+    errorData: null
   });
+
+  // on first load click the first button
+  // To DO: needs to refactor in react
+  useEffect(() => {
+    MonitorData.command == null
+      ? document.querySelector(".KeyButton").click()
+      : false;
+    if (MonitorData.command == "") {
+      document.querySelectorAll(".KeyButton").forEach((element) => {
+        element.classList.remove("active");
+      });
+      document.querySelector(".KeyButton").classList.add("active");
+    } else if (MonitorData.command == "Education") {
+      document.querySelectorAll(".KeyButton").forEach((element) => {
+        element.classList.remove("active");
+      });
+      document.querySelectorAll(".KeyButton")[1].classList.add("active");
+    } else if (MonitorData.command == "Skill") {
+      document.querySelectorAll(".KeyButton").forEach((element) => {
+        element.classList.remove("active");
+      });
+      document.querySelectorAll(".KeyButton")[2].classList.add("active");
+    } else if (MonitorData.command == "Projects") {
+      document.querySelectorAll(".KeyButton").forEach((element) => {
+        element.classList.remove("active");
+      });
+      document.querySelectorAll(".KeyButton")[3].classList.add("active");
+    } else {
+      document.querySelectorAll(".KeyButton").forEach((element) => {
+        element.classList.remove("active");
+      });
+    }
+  }, [MonitorData]);
+
   // Function for keyboard command
-  const TabCommand = (command, massage, speed, display, page) => {
+  const TabCommand = (e, command, massage, speed, display, page) => {
     // play sound
-     ClickSound.play();
+    ClickSound.play();
     // Changing monitor data
     ShowToMonitor(
       MonitorData,
@@ -72,8 +106,10 @@ function App() {
                   <Button
                     key={button.id}
                     Type="button"
-                    onClick={() =>
+                    className={`KeyButton`}
+                    onClick={(e) =>
                       TabCommand(
+                        e,
                         button.command,
                         button.MonitorData,
                         button.typingSpeed,
@@ -113,6 +149,6 @@ function ShowToMonitor(
     display: display,
     page: page,
     inputData: "",
-    errorData: null,
+    errorData: null
   });
 }

@@ -2,17 +2,12 @@
 export const ButtonsData = [
   {
     id: 1,
-    command: "Name",
-    Text: "Name",
+    command: "",
+    Text: "Introduction",
     Icon: "user",
-    MonitorData: "Minhajur Rahman"
-  },
-  {
-    id: 2,
-    command: "Profession",
-    Text: "Profession",
-    Icon: "user-tie",
-    MonitorData: "Full Stack Developer"
+    MonitorData: `Hello, my name is Minhajur Rahman <br/>
+     &nbsp; &nbsp; I am a full stack developer
+    `
   },
   {
     id: 3,
@@ -46,6 +41,7 @@ export const ButtonsData = [
       </li>
       <li> Directory Listing Website : <a href="https://khuji.vercel.app/" target="_blank"> Khuji </a> </li>
       <li> Multi-Author Blogging Platform : <a href="https://blogism.vercel.app/" target="_blank"> Blogism </a> </li>
+      <li> Digital Marketing agency Website : <a href="https://webmarketizer.netlify.app/" target="_blank"> Web Marketizer </a> </li>
       </ul>`,
     typingSpeed: 70,
     display: "inline-block"

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import { Color } from "../../theme";
 const GlobalStyles = createGlobalStyle`
    // Reset/normalize
 *,
@@ -16,6 +16,12 @@ body {
   font-family: 'VT323', monospace;
   text-transform: uppercase;
   font-size: 4vmin;
+  .active {
+  color: ${Color.seconderyColor};
+  background: #e8ede6;
+  transform: translateY(-5px);
+  box-shadow: 4px 6px 0px 2px rgb(0 0 0 / 25%);
+}
 }
 
 `;

@@ -71,7 +71,7 @@ function ResetMonitor(MonitorData, setMonitorData) {
   setMonitorData({
     ...MonitorData,
     command: null,
-    massage: "Welcome to my website",
+    massage: "",
     speed: 100,
     display: null,
     page: "home",
