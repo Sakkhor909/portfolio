@@ -14,7 +14,7 @@ export const ButtonsData = [
     command: "Education",
     Text: "Education",
     Icon: "user-graduate",
-    MonitorData: `I have studied Bachelor of Business Administration (BBA) with a major in Management Information system (MIS) graduated from <a href="https://daffodilvarsity.edu.bd/" target="_blank"> Daffodil Internation University  </a>`,
+    MonitorData: `I have studied Bachelor of Business Administration (BBA) with a major in Management Information system (MIS) graduated from <a href="https://daffodilvarsity.edu.bd/" target="_blank"> Daffodil International University  </a>`,
     typingSpeed: 40
   },
   {
