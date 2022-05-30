@@ -39,7 +39,7 @@ export const ButtonsData = [
       <li> Raw Javascript : 
       <a href="https://sakkhor909.github.io/raw-javascript-projects/webcolorgame/" target="_blank"> Web Color Game </a>
       </li>
-      <li> Directory Listing Website : <a href="https://khuji.vercel.app/" target="_blank"> Khuji </a> </li>
+      <li> Directory Listing Website : <a href="https://khuji.net/" target="_blank"> Khuji </a> </li>
       <li> Multi-Author Blogging Platform : <a href="https://blogism.vercel.app/" target="_blank"> Blogism </a> </li>
       <li> Digital Marketing agency Website : <a href="https://webmarketizer.netlify.app/" target="_blank"> Web Marketizer </a> </li>
       </ul>`,
